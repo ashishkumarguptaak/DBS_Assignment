@@ -1,0 +1,13 @@
+1>
+Firstly login with root user:
+
+>> mariadb
+>> create user hr_user@localhost identified by 'hrpassword';
+>> select current_user();
+>> grant select,insert,update,delete on emp_dept.* to hr_user@localhost;
+
+2>
+>> alter table orders add primary key (order_id);
+
+3>
+>> update statistics emp;

@@ -1,0 +1,36 @@
+1>
+
+Table 1(customer):
+
+customer_id	gender	first_name	last_name	street		   city 	state	   pincode
+1		male	Richard		Cook		123 this street	   My City	Ontario	   Z5Z 6G6
+
+Table 2(pets):
+
+pet_id	   pet_name	customer_id
+1	   Rover	1
+2	   Morris	1
+
+Table 3(invoice);
+
+invoice_no	procedure		date		tax	total	owing	customer_id
+987		Rabies Vaccination	2002-01-13	4.32	54.00	58.32	1
+
+
+
+2>
+
+Create a deleted_customer table to insert deleted records.
+
+>> create table deleted_customer(cust_name varchar(35),email varchar(50),phone char(10),address1 varchar(20),address varchar(20),city varchar(20),pincode int,cust_request text,reported_date date);
+
+Now create a trigger which executes before every delete command on customer_details table
+
+>>Delimiter //
+>create trigger del before delete on customer_details for each row
+>begin
+>	insert into deleted_customer(cust_name,email,phone,address1,address2,city,pincode,cust_request,reported_date) values(old.cust_name,old.email,old.phone,old.address1,old.address2,old.city,old.pincode,old.cust_request,old.reported_date);
+>end;
+>>//
+
+Now whenever a row deleted from customer_details it get first inserted in deleted_customer tables automatically.

@@ -1,0 +1,82 @@
+Day--2 Assignment
+
+
+1> select * from emp;
+
+2> select distinct(job) from emp;
+
+3> select * from emp order by sal;
+
+4> select * from emp order by deptno, job desc;
+
+5> select distinct(job) from emp order by job desc;
+
+6> select * from emp where job='MANAGER';
+
+7> select * from emp where hiredate<'1981-01-01';
+
+8> select empno,ename,sal,sal/30 from emp order by sal;
+
+9> select empno,ename,job,hiredate,datediff(curdate(),hiredate) as exp_in_days from emp where job='MANAGER';
+
+10> select empno,ename,sal,datediff(curdate(),hiredate) as exp_in_days from emp where mgr=7369;
+
+11> select * from emp where comm>sal;
+
+12> select * from emp where hiredate>='1981-07-01' order by job;
+
+13> select *,datediff(curdate(),hiredate) as exp_in_days from emp where (sal/30)>100;
+
+14> select * from emp where job in ('CLERK','ANALYST') order by ename;
+
+15> select * from emp where hiredate in ('1981-05-01','1981-12-17','1980-01-19') order by sal;
+
+16> select * from emp where deptno=10 or deptno=20;
+
+17> select * from emp where year(hiredate)=1981;
+
+18> select * from emp where year(hiredate)=1980 and month(hiredate)=8;
+
+19> select * from emp where sal between 22000 and 45000;
+
+20> select * from emp where char_length(ename)=5;
+
+21> select * from emp where ename like 'S%' and char_length(ename)=5;
+
+22> select * from emp where char_length(ename)=4 and ename like '__r%';
+
+23> select * from emp where char_length(ename)=5 and ename like 'S%H';
+
+24> select * from emp where month(hiredate)=1;
+
+25> select * from emp where monthname(hiredate) like '_a%';
+
+26> select * from emp where char_length(truncate(sal,0))=4 and truncate(sal,0) like '%0';
+
+27> select * from emp where ename like '%LL%';
+
+28> select * from emp where hiredate>='1980-01-01' and hiredate<'1990-01-01';
+
+29> select * from emp where deptno!=20;
+
+30> select * from emp where job not in ('PRESIDENT','MANAGER') order by sal;
+
+31> select * from emp where not year(hiredate)=1981;
+
+32> select ename from emp where empno not like '78%';
+
+33> select a.ename as employee,b.ename as manager from emp a, emp b where a.mgr=b.empno ;
+
+34> select ename from emp where not month(hiredate)=3;
+
+35> select ename from emp where deptno=20 and job='CLERK';
+
+36> select ename from emp where deptno in (30,10) and year(hiredate)=1981;
+
+37> select * from emp where ename = 'SMITH';
+
+38> select loc from emp,dept where emp.ename='SMITH' and emp.deptno=dept.deptno;
+
+39> select * from emp a,dept b where dname in ('ACCOUNTING','RESEARCH') and a.deptno=b.deptno order by a.deptno;
+
+40> select emp.empno,emp.ename,emp.sal,dept.dname from emp,dept where emp.deptno=dept.deptno and emp.job in ('MANAGER','ANALYST') and dept.loc in ('NEW YORK','DALLAS') and datediff(curdate(),emp.hiredate)/365>7 and emp.comm=0 order by dept.loc;

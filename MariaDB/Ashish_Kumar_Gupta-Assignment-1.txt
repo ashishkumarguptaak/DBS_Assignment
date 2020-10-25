@@ -1,0 +1,6 @@
+Task 9 Observations:-
+
+1> On InnoDB(Transactional storage) engine commit saves the insertion and updation commands output in emp table.
+2> An entry from emp table is updated and another entry got deleted then finally system rollbacks to it's previous state.
+3> An entry is deleted after this rollback called but nothing happen as dept table is in MyISAM(non-transactional)engine.
+4> Both update and insertion will executed successfully but rollback works only for emp(transactional engine).

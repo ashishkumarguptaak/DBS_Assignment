@@ -1,0 +1,41 @@
+1>
+
+>> cat > file.sh
+str="Ubuntu Fedora Suse Linuxmint";
+ar=($str);
+c=1;
+for el in "${ar[@]}";
+do [[ $el == "Fedora" ]] && echo $c && break
+((c++))
+done
+
+
+>> ./file.sh
+
+
+2>
+
+>> cat afile.txt | grep 'Bank' >> afile.txt
+>> cat afile.txt | sed 's\ \_\g' >> afile.txt
+
+
+3>
+
+>> awk '{print length}' afile.txt
+
+4>
+
+>> echo "Live More Bank Less" | awk '{print index($0,"r")}';
+
+5>
+
+>> sudo apt-get install mysql -u root -h localhost password 'password_input';
+
+6>
+
+>> awk '$1<=500 {print $1,$2} $1>500 {$2="localhost" print $1,$2}' f4 >> f5
+
+7>
+
+>> free -h | awk 'NFR==2{print $1,$2,$3}'
+>> free -h | awk 'NFR==3{print $1,$2,$3}'

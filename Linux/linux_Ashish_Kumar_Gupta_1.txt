@@ -1,0 +1,43 @@
+1>
+A shared mount allows the creation of an exact replica of a given mount point.
+When a mount point is marked as a shared mount, any mount within the original mount point is reflected in it and vice versa.
+To change the type of a mount point to a shared mount, type the following at a shell prompt:
+mount --make-shared mount_point
+
+
+In order to prevent a given mount point from being duplicated whatever, an unbindable mount is used.
+To change the type of a mount point to an unbindable mount, type the following at a shell prompt:
+mount --make-unbindable mount_point
+
+
+
+
+2>
+
+>> mkdir dir
+>> cat > file1
+>> DBS bank is my first company
+>> cat > file2
+>> DBS bank is world's best bank
+>> cat > file3
+>> DBS bank always take care of it's employees
+>> grep -or 'bank' . | wc -l
+>> 4
+
+
+3>
+>> tail -f $logfile
+
+4>
+A shell provides an interface to the Unix system.shell is an environment in which we can run our commands,programs and shell scripts.
+There are different flavors of a shell, just as there are different flavors of operating systems.
+
+In Unix there are two major types of shells:-
+a> Bourne shell
+b> C shell
+
+Bash is the default user shell on most Linux installations.Though it is one of several well known Unix shells.
+
+5>
+echo $SHELL
+
